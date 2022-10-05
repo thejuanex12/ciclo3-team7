@@ -1,4 +1,4 @@
-package com.example.retos345.entities;
+package com.example.Team7.entities;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -32,16 +32,16 @@ public class Reservation implements Serializable{
     private Date devolutionDate;
 
     //***** RELACIONES *****
-    //Relacion Muchos a uno. La Reservation tiene enlazados un Client y Un Farm
+    //Relacion Muchos a uno. La Reservation tiene enlazados un Client y Un Orthesis
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "client_id")
 	@JsonProperty(access = Access.WRITE_ONLY)
 	private Client client;
     
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name = "farm_id")
+	@JoinColumn(name = "orthesis_id")
 	@JsonProperty(access = Access.WRITE_ONLY)
-	private Farm farm;
+	private Orthesis orthesis;
 
     //***** METODOS *****
     public Integer getId() {
@@ -76,12 +76,12 @@ public class Reservation implements Serializable{
         this.client = client;
     }
 
-    public Farm getFarm() {
-        return farm;
+    public Orthesis getOrthesis() {
+        return orthesis;
     }
 
-    public void setFarm(Farm farm) {
-        this.farm = farm;
+    public void setOrthesis(Orthesis orthesis) {
+        this.orthesis = orthesis;
     }
 
 }

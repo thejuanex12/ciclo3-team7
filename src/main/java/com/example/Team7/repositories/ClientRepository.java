@@ -1,8 +1,8 @@
-package com.example.retos345.repositories;
+package com.example.Team7.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.retos345.entities.Client;
+import com.example.Team7.entities.Client;
 
 public interface ClientRepository  extends JpaRepository<Client, Integer>{
 }

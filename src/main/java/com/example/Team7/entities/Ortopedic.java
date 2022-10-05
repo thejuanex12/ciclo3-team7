@@ -1,7 +1,6 @@
-package com.example.retos345.entities;
+package com.example.Team7.entities;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,8 +17,8 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "farm")
-public class Farm implements Serializable{
+@Table(name = "orthesis")
+public class Orthesis implements Serializable{
 
     //***** ATRIBUTOS *****
     @Id
@@ -39,16 +38,16 @@ public class Farm implements Serializable{
     private String description;
 
     //***** RELACIONES *****
-    //Relación uno a uno. Una Farm tiene un Category relacionada.
+    //Relación uno a uno. Una Orthesis tiene un Category relacionada.
     @OneToOne
 	@JoinColumn(name = "category_id")
 	private Category category;
 
-    // Un Farm puede tener muchas Reservation y Messages.
-    @OneToMany(mappedBy = "farm", cascade = CascadeType.ALL)
+    // Un Orthesis puede tener muchas Reservation y Messages.
+    @OneToMany(mappedBy = "orthesis", cascade = CascadeType.ALL)
     private Set<Reservation> reservations = new HashSet<>();
 
-    @OneToMany(mappedBy = "farm", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "orthesis", cascade = CascadeType.ALL)
     private Set<Message> messages = new HashSet<>();
 
 
