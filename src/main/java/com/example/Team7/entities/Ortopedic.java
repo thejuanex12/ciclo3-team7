@@ -1,6 +1,7 @@
 package com.example.Team7.entities;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,11 +26,11 @@ public class Ortopedic implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "address")
-    private String address;
+    @Column(name = "brand")
+    private String brand;
 
-    @Column(name = "extension")
-    private String extension;
+    @Column(name = "year")
+    private Date year;
 
     @Column(name = "name")
     private String name;
@@ -60,20 +61,20 @@ public class Ortopedic implements Serializable{
         this.id = id;
     }
 
-    public String getAddress() {
-        return address;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public String getExtension() {
-        return extension;
+    public Date getYear() {
+        return year;
     }
 
-    public void setExtension(String extension) {
-        this.extension = extension;
+    public void setYear(Date year) {
+        this.year = year;
     }
 
     public String getName() {
