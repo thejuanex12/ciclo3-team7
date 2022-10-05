@@ -32,16 +32,16 @@ public class Reservation implements Serializable{
     private Date devolutionDate;
 
     //***** RELACIONES *****
-    //Relacion Muchos a uno. La Reservation tiene enlazados un Client y Un Orthesis
+    //Relacion Muchos a uno. La Reservation tiene enlazados un Client y Un Ortopedic
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "client_id")
 	@JsonProperty(access = Access.WRITE_ONLY)
 	private Client client;
     
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name = "orthesis_id")
+	@JoinColumn(name = "ortopedic_id")
 	@JsonProperty(access = Access.WRITE_ONLY)
-	private Orthesis orthesis;
+	private Ortopedic ortopedic;
 
     //***** METODOS *****
     public Integer getId() {
@@ -76,12 +76,12 @@ public class Reservation implements Serializable{
         this.client = client;
     }
 
-    public Orthesis getOrthesis() {
-        return orthesis;
+    public Ortopedic getOrtopedic() {
+        return ortopedic;
     }
 
-    public void setOrthesis(Orthesis orthesis) {
-        this.orthesis = orthesis;
+    public void setOrtopedic(Ortopedic ortopedic) {
+        this.ortopedic = ortopedic;
     }
 
 }

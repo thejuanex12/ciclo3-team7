@@ -17,8 +17,8 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "orthesis")
-public class Orthesis implements Serializable{
+@Table(name = "ortopedic")
+public class Ortopedic implements Serializable{
 
     //***** ATRIBUTOS *****
     @Id
@@ -38,16 +38,16 @@ public class Orthesis implements Serializable{
     private String description;
 
     //***** RELACIONES *****
-    //Relación uno a uno. Una Orthesis tiene un Category relacionada.
+    //Relación uno a uno. Una Ortopedic tiene un Category relacionada.
     @OneToOne
 	@JoinColumn(name = "category_id")
 	private Category category;
 
-    // Un Orthesis puede tener muchas Reservation y Messages.
-    @OneToMany(mappedBy = "orthesis", cascade = CascadeType.ALL)
+    // Un Ortopedic puede tener muchas Reservation y Messages.
+    @OneToMany(mappedBy = "ortopedic", cascade = CascadeType.ALL)
     private Set<Reservation> reservations = new HashSet<>();
 
-    @OneToMany(mappedBy = "orthesis", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "ortopedic", cascade = CascadeType.ALL)
     private Set<Message> messages = new HashSet<>();
 
 

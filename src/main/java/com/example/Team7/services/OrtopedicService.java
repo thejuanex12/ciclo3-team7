@@ -5,48 +5,48 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.Team7.entities.Orthesis;
-import com.example.Team7.repositories.OrthesisRepository;
+import com.example.Team7.entities.Ortopedic;
+import com.example.Team7.repositories.OrtopedicRepository;
 
 
 @Service
-public class OrthesisService {
+public class OrtopedicService {
     
         @Autowired
-        private OrthesisRepository orthesisRepository;
+        private OrtopedicRepository ortopedicRepository;
 
-        public OrthesisService(OrthesisRepository orthesisRepository) {
-            this.orthesisRepository = orthesisRepository;
+        public OrtopedicService(OrtopedicRepository ortopedicRepository) {
+            this.ortopedicRepository = ortopedicRepository;
         }
 
         // METODOS CRUD
-        public List<Orthesis> getListOrthesis(){
-            return this.orthesisRepository.findAll();
+        public List<Ortopedic> getListOrtopedic(){
+            return this.ortopedicRepository.findAll();
         }
 
-        public Orthesis getOrthesis(int id){
-            if(!this.orthesisRepository.findById(id).isEmpty()){
-                return this.orthesisRepository.findById(id).get();
+        public Ortopedic getOrtopedic(int id){
+            if(!this.ortopedicRepository.findById(id).isEmpty()){
+                return this.ortopedicRepository.findById(id).get();
             }else{
                 return null;
             }
         }
 
-        public Orthesis crearOrthesis(Orthesis orthesis){
-            return this.orthesisRepository.save(orthesis);
+        public Ortopedic crearOrtopedic(Ortopedic ortopedic){
+            return this.ortopedicRepository.save(ortopedic);
         }
 
-        public void eliminarOrthesis(int id){
-            if(!this.orthesisRepository.findById(id).isEmpty()){
-                this.orthesisRepository.deleteById(id);
+        public void eliminarOrtopedic(int id){
+            if(!this.ortopedicRepository.findById(id).isEmpty()){
+                this.ortopedicRepository.deleteById(id);
             }
         }
 
-        public void actualizarOrthesis(int id, Orthesis orthesis){
-            if(!this.orthesisRepository.findById(id).isEmpty()){
-                Orthesis orthesisDB = this.orthesisRepository.findById(id).get();
+        public void actualizarOrtopedic(int id, Ortopedic ortopedic){
+            if(!this.ortopedicRepository.findById(id).isEmpty()){
+                Ortopedic ortopedicDB = this.ortopedicRepository.findById(id).get();
 
-                this.orthesisRepository.save(orthesisDB);
+                this.ortopedicRepository.save(ortopedicDB);
             }
         }
 }

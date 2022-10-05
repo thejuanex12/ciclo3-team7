@@ -2,7 +2,7 @@ package com.example.Team7.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.Team7.entities.Orthesis;
+import com.example.Team7.entities.Ortopedic;
 
-public interface OrthesisRepository  extends JpaRepository<Orthesis, Integer>{
+public interface OrtopedicRepository  extends JpaRepository<Ortopedic, Integer>{
 }

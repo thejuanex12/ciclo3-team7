@@ -15,46 +15,46 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Team7.entities.Orthesis;
-import com.example.Team7.services.OrthesisService;
+import com.example.Team7.entities.Ortopedic;
+import com.example.Team7.services.OrtopedicService;
 
 @Service
 @RestController
-@RequestMapping("api/Orthesis")
-public class OrthesisController {    
+@RequestMapping("api/Ortopedic")
+public class OrtopedicController {    
 
     @Autowired
-    OrthesisService orthesisService;
+    OrtopedicService ortopedicService;
 
-    public OrthesisController(OrthesisService orthesisService) {
-        this.orthesisService = orthesisService;
+    public OrtopedicController(OrtopedicService ortopedicService) {
+        this.ortopedicService = ortopedicService;
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Orthesis>> getOrthesiss(){
-        return new ResponseEntity<List<Orthesis>>(this.orthesisService.getListOrthesis(), HttpStatus.OK);
+    public ResponseEntity<List<Ortopedic>> getOrtopedics(){
+        return new ResponseEntity<List<Ortopedic>>(this.ortopedicService.getListOrtopedic(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Orthesis> getOrthesis(@PathVariable("id") int id){
-        return new ResponseEntity<Orthesis>(this.orthesisService.getOrthesis(id), HttpStatus.OK);
+    public ResponseEntity<Ortopedic> getOrtopedic(@PathVariable("id") int id){
+        return new ResponseEntity<Ortopedic>(this.ortopedicService.getOrtopedic(id), HttpStatus.OK);
     }
 
     @PostMapping("/save")
-    public ResponseEntity<Orthesis> crearOrthesis(@RequestBody Orthesis orthesis){
-        return new ResponseEntity<Orthesis>(this.orthesisService.crearOrthesis(orthesis), HttpStatus.CREATED);
+    public ResponseEntity<Ortopedic> crearOrtopedic(@RequestBody Ortopedic ortopedic){
+        return new ResponseEntity<Ortopedic>(this.ortopedicService.crearOrtopedic(ortopedic), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> eliminarOrthesis(@PathVariable("id") int id){
-        this.orthesisService.eliminarOrthesis(id);
-        return new ResponseEntity<String>("Orthesis Eliminado", HttpStatus.NO_CONTENT);
+    public ResponseEntity<String> eliminarOrtopedic(@PathVariable("id") int id){
+        this.ortopedicService.eliminarOrtopedic(id);
+        return new ResponseEntity<String>("Ortopedic Eliminado", HttpStatus.NO_CONTENT);
     }
 
     @PutMapping("/update")
-    public ResponseEntity<String> actualizarOrthesis(@RequestBody Orthesis orthesis){
-        this.orthesisService.actualizarOrthesis(orthesis.getId(), orthesis);
-        return new ResponseEntity<String>("Orthesis Actualizado", HttpStatus.CREATED);
+    public ResponseEntity<String> actualizarOrtopedic(@RequestBody Ortopedic ortopedic){
+        this.ortopedicService.actualizarOrtopedic(ortopedic.getId(), ortopedic);
+        return new ResponseEntity<String>("Ortopedic Actualizado", HttpStatus.CREATED);
     }
     
 
