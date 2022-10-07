@@ -29,7 +29,7 @@ public class Ortopedic implements Serializable{
     @Column(name = "brand")
     private String brand;
 
-    @Column(name = "year")
+    @Column(name = "years")
     private Date year;
 
     @Column(name = "name")
